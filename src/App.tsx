@@ -1,5 +1,11 @@
+import { Banner } from './components/banner'
+
 function App() {
-  return <h1>hello world</h1>
+  return (
+    <main>
+      <Banner />
+    </main>
+  )
 }
 
 export default App
