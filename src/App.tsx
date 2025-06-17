@@ -1,5 +1,18 @@
+import '@styles/layouts/_content.scss'
+
+import { Banner } from './components/banner'
+import { CreateForm } from './components/create-form'
+
 function App() {
-  return <h1>hello world</h1>
+  return (
+    <main>
+      <Banner />
+
+      <div className="content">
+        <CreateForm />
+      </div>
+    </main>
+  )
 }
 
 export default App
