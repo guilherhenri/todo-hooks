@@ -1,0 +1,77 @@
+.select__trigger {
+  min-width: 10rem;
+  height: 3.375rem;
+
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  gap: 0.5rem; 
+  
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem; 
+  padding-left: 0.75rem;
+  padding-right: 0.75rem; 
+
+  border-radius: var(--radius-lg); 
+  border: 1px solid var(--input-border);
+  white-space: nowrap; 
+
+  background-color: var(--input); 
+  color: var(--card-foreground);
+
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+
+  &[data-placeholder]{
+    color: var(--foreground);
+  }
+
+  &:focus, &:focus-within, &:focus-visible {
+    outline: none;
+    border-color: var(--accent);
+  }
+
+  &-icon {
+    opacity: 0.5; 
+  }
+}
+
+.select__content {
+  width: var(--radix-select-trigger-width);
+	max-height: var(--radix-select-content-available-height);
+  
+  background-color: var(--input);
+  overflow: hidden;
+  border-radius: 0.375rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); 
+
+  &-viewport {
+    padding: 0.313rem;
+  }
+}
+
+.select__item {
+	border-radius: var(--radius-sm);
+	display: flex;
+	align-items: center;
+	height: 1.625rem;
+	padding: 0 0.5rem;
+	position: relative;
+	user-select: none;
+  color: var(--card-foreground);
+  transition: background-color var(--transition-normal);
+  outline: none;
+  cursor: pointer;
+
+  &:focus, &:focus-within, &:focus-visible, &:hover {
+    background-color: var(--accent);
+  }
+
+  &-indicator {
+    display: flex; 
+    position: absolute; 
+    right: 0.5rem; 
+    justify-content: center; 
+    align-items: center; 
+  }
+}

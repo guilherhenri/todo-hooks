@@ -1,0 +1,31 @@
+.header {
+  width: 100%;
+
+  &__status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  &__created, &__done {
+    font-weight: 700;
+  }
+
+  &__created {
+    color: var(--primary-hover);
+  }
+
+  &__done {
+    color: var(--accent-hover);
+  }
+
+  &__status-tip {
+    background-color: var(--card);
+    color: var(--card-foreground);
+    border-radius: var(--radius-full);
+    
+    padding: 0.125rem 0.5rem;
+    margin-left: 0.5rem;
+  }
+}
