@@ -1,0 +1,81 @@
+.card {
+  width: 100%;
+  padding: 1rem;
+
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+
+  &__done {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 1.5rem;
+  }
+
+  &__info {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    &-title {
+      color: var(--card-foreground);
+    }
+
+    $priorities: ('high', 'medium', 'low');
+
+    &-priority {
+      @each $priority in $priorities {
+        &[data-priority='#{$priority}'] {
+          color: var(--priority-#{$priority});
+        }
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+
+    &-button {
+      width: 1.75rem;
+      height: 1.75rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background-color: transparent;
+      border: none;
+      border-radius: var(--radius-sm);
+
+      cursor: pointer;
+      transition: all var(--transition-normal);
+
+      &:hover {
+        background-color: var(--button-hover);
+      }
+    }
+
+    &-edit:hover {
+      color: var(--primary-hover);
+    }
+
+    &-delete:hover {
+      color: var(--destructive);
+    }
+
+    &-separator {
+      width: 100%;
+      height: 1px;
+      background-color: var(--border);
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.checkbox {
+  width: 1.25rem;
+  height: 1.25rem;
+  
+  background-color: transparent;
+  border: 2px solid var(--primary-hover);
+  border-radius: var(--radius-full);
+
+  cursor: pointer;
+
+  &[data-state='checked'] {
+    background-color: var(--accent-hover);
+    border-color: var(--accent-hover);
+  }
+
+  &__indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-property: none; 
+
+    &-icon {
+      color: var(--card-foreground);
+    }
+  }
+}
