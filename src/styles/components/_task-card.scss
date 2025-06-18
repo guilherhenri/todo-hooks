@@ -24,17 +24,27 @@
     flex-direction: column;
     gap: 0.5rem;
 
-    &-title {
+    &-description {
       color: var(--card-foreground);
+
+      &[data-done=true] {
+        color: var(--foreground);
+        text-decoration: line-through;
+      }
     }
 
-    $priorities: ('high', 'medium', 'low');
+    $priorities: ('high', 'regular', 'low');
 
     &-priority {
       @each $priority in $priorities {
         &[data-priority='#{$priority}'] {
           color: var(--priority-#{$priority});
         }
+      }
+
+      &[data-done=true] {
+        color: var(--foreground);
+        text-decoration: line-through;
       }
     }
   }
