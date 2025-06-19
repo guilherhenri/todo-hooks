@@ -1,3 +1,11 @@
+# [1.2.0](https://github.com/guilherhenri/todo-hooks/compare/v1.1.0...v1.2.0) (2025-06-19)
+
+
+### Features
+
+* **header:** integrate Filters component into header ([366f70e](https://github.com/guilherhenri/todo-hooks/commit/366f70e93e79656b5dac3cdc01ed8663d6fe7e4f))
+* **task:** implement Filters component ([f3b2a9e](https://github.com/guilherhenri/todo-hooks/commit/f3b2a9efa3e9acb83debf63ee02ab2e69888f112))
+
 # [1.1.0](https://github.com/guilherhenri/todo-hooks/compare/v1.0.0...v1.1.0) (2025-06-19)
 
 
