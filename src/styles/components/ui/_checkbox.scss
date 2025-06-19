@@ -4,9 +4,18 @@
   
   background-color: transparent;
   border: 2px solid var(--primary-hover);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-sm);
 
   cursor: pointer;
+
+  &--circle {
+    border-radius: var(--radius-full);
+  }
+
+  &--sm {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
 
   &[data-state='checked'] {
     background-color: var(--accent-hover);

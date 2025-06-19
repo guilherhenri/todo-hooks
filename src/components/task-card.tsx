@@ -42,6 +42,7 @@ export function TaskCard({
     <div className="card">
       <div className="card__done">
         <Checkbox
+          variant="circle"
           defaultChecked={isDone}
           onCheckedChange={(checked) => handleToggleTask(Boolean(checked))}
         />
