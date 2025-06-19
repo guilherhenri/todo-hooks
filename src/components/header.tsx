@@ -1,30 +1,28 @@
 import '@styles/components/_header.scss'
 
-import { useMemo } from 'react'
-
 import { useTask } from '@/contexts/task-context'
 
-export function Header() {
-  const { tasks } = useTask()
+import { Filters } from './filters'
 
-  const doneTasks = useMemo(() => {
-    return tasks.filter((task) => task.isDone).length
-  }, [tasks])
+export function Header() {
+  const { meta } = useTask()
 
   return (
     <header className="header">
       <div className="header__status">
         <span className="header__created">
           Tarefas Criadas{' '}
-          <span className="header__status-tip">{tasks.length}</span>
+          <span className="header__status-tip">{meta.total}</span>
         </span>
         <span className="header__done">
           Concluídas{' '}
           <span className="header__status-tip">
-            {doneTasks} de {tasks.length}
+            {meta.done} de {meta.total}
           </span>
         </span>
       </div>
+
+      <Filters />
     </header>
   )
 }
