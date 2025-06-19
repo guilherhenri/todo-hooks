@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "prepare": "husky",
     "test": "jest",
-    "test:watch": "jest --watch --jsx"
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",
