@@ -1,3 +1,24 @@
+# [1.1.0](https://github.com/guilherhenri/todo-hooks/compare/v1.0.0...v1.1.0) (2025-06-19)
+
+
+### Features
+
+* **app:** integrate TaskProvider into App.tsx ([9531f49](https://github.com/guilherhenri/todo-hooks/commit/9531f495bbb63d0ed624c9d3fb57eb1332e56262))
+* **context:** create TaskContext for global state management ([6af70fa](https://github.com/guilherhenri/todo-hooks/commit/6af70fabbe8c2f0bc4cfeea2f7992836f926c706))
+* **header:** display dynamic task statistics from context ([ebc00c6](https://github.com/guilherhenri/todo-hooks/commit/ebc00c6683058b594fa52e7d9b7acd8f863b9e01))
+* **hook:** implement useLocalStorage custom hook ([1419689](https://github.com/guilherhenri/todo-hooks/commit/14196898f8b18afeac17816a6f8ac9286459dc8f))
+* **list-tasks:** render dynamic task list from context ([bce9ab9](https://github.com/guilherhenri/todo-hooks/commit/bce9ab9308ad767ecf4d54be3fddf11244d2f9cd))
+* **task-card:** implement task update and delete via context ([7958d90](https://github.com/guilherhenri/todo-hooks/commit/7958d90e447e94300f3616737024b86708500901))
+* **task-card:** integrate EditForm into TaskCard via Dialog ([779d579](https://github.com/guilherhenri/todo-hooks/commit/779d5799ea177cf09136ac6262db34ebf7566a94))
+* **task-context:** add getTask function to context ([8e3ccc4](https://github.com/guilherhenri/todo-hooks/commit/8e3ccc4df536eb5486ae870bffcf66975724ea3f))
+* **task:** implement EditForm component ([7748fc8](https://github.com/guilherhenri/todo-hooks/commit/7748fc8ee3cb1c5fd76ec52953441c5902842aef))
+* **ui:** implement Radix UI Dialog component ([db53b44](https://github.com/guilherhenri/todo-hooks/commit/db53b44eb11b50154038eabc4d115d4e2203635c))
+
+
+### Performance Improvements
+
+* **create-form:** optimize form validation with useMemo ([0f55e3e](https://github.com/guilherhenri/todo-hooks/commit/0f55e3e0951ca0683674926e2095de4a0b416889))
+
 # 1.0.0 (2025-06-18)
 
 
