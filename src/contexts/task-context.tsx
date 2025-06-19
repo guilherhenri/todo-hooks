@@ -20,6 +20,7 @@ type TaskForm = Omit<Task, 'id' | 'isDone'>
 
 interface TaskContextType {
   tasks: Task[]
+  getTask: (id: string) => Task | undefined
   addTask: (task: TaskForm) => void
   updateTask: (task: Task) => void
   deleteTask: (id: string) => void
@@ -36,6 +37,10 @@ export function TaskProvider({ children }: { children: ReactNode }) {
   const [tasks, setTasks] = useState<Task[]>([])
 
   const { syncStorage, loadStorage } = useLocalStorage<Task[]>()
+
+  function getTask(id: string) {
+    return tasks.find((task) => task.id === id)
+  }
 
   function addTask(task: TaskForm) {
     const newList: Task[] = [
@@ -81,7 +86,9 @@ export function TaskProvider({ children }: { children: ReactNode }) {
   }, [loadStorage])
 
   return (
-    <TaskContext.Provider value={{ tasks, addTask, updateTask, deleteTask }}>
+    <TaskContext.Provider
+      value={{ tasks, getTask, addTask, updateTask, deleteTask }}
+    >
       {children}
     </TaskContext.Provider>
   )

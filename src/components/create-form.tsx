@@ -1,7 +1,7 @@
 import '@styles/components/_create-form.scss'
 
 import { PlusCircleIcon } from '@phosphor-icons/react'
-import { type FormEvent, useState } from 'react'
+import { type FormEvent, useMemo, useState } from 'react'
 
 import { useTask } from '@/contexts/task-context'
 
@@ -52,7 +52,13 @@ export function CreateForm() {
     }
   }
 
-  const isFormValid = task.description.trim() && task.priority
+  const isFormValid = useMemo(() => {
+    if (task) {
+      return task.description.trim() && task.priority
+    }
+
+    return false
+  }, [task])
 
   return (
     <form className="create-form" onSubmit={handleCreateTask}>
