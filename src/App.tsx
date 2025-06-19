@@ -4,22 +4,25 @@ import { Banner } from './components/banner'
 import { CreateForm } from './components/create-form'
 import { Header } from './components/header'
 import { ListTasks } from './components/list-tasks'
+import { TaskProvider } from './contexts/task-context'
 
 function App() {
   return (
-    <main>
-      <Banner />
+    <TaskProvider>
+      <main>
+        <Banner />
 
-      <div className="content">
-        <CreateForm />
+        <div className="content">
+          <CreateForm />
 
-        <div className="content__tasks">
-          <Header />
+          <div className="content__tasks">
+            <Header />
 
-          <ListTasks />
+            <ListTasks />
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </TaskProvider>
   )
 }
 
