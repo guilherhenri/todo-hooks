@@ -1,10 +1,13 @@
 import '@styles/components/_task-card.scss'
 
 import { PencilIcon, TrashIcon } from '@phosphor-icons/react'
+import { useState } from 'react'
 
 import { type Task, useTask } from '@/contexts/task-context'
 
+import { EditForm } from './edit-form'
 import { Checkbox } from './ui/checkbox'
+import { Dialog, DialogContent, DialogTitle, DialogTrigger } from './ui/dialog'
 
 export function TaskCard({
   task: { id, description, priority, isDone },
@@ -12,6 +15,8 @@ export function TaskCard({
   task: Task
 }) {
   const { updateTask, deleteTask } = useTask()
+
+  const [open, setOpen] = useState(false)
 
   function translatePriory(priority: Task['priority']) {
     switch (priority) {
@@ -56,9 +61,18 @@ export function TaskCard({
       </div>
 
       <div className="card__actions">
-        <button className="card__actions-button card__actions-edit">
-          <PencilIcon size={18} />
-        </button>
+        <Dialog open={open} onOpenChange={setOpen}>
+          <DialogTrigger asChild>
+            <button className="card__actions-button card__actions-edit">
+              <PencilIcon size={18} />
+            </button>
+          </DialogTrigger>
+          <DialogContent aria-describedby={undefined}>
+            <DialogTitle>Editar tarefa</DialogTitle>
+
+            <EditForm id={id} closeDialog={() => setOpen(false)} />
+          </DialogContent>
+        </Dialog>
 
         <span className="card__actions-separator" />
 
