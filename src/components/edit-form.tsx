@@ -88,9 +88,15 @@ export function EditForm({
           <SelectValue placeholder="Prioridade" />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="high">Alta</SelectItem>
-          <SelectItem value="regular">Normal</SelectItem>
-          <SelectItem value="low">Baixa</SelectItem>
+          <SelectItem value="high" aria-label="Alta">
+            Alta
+          </SelectItem>
+          <SelectItem value="regular" aria-label="Normal">
+            Normal
+          </SelectItem>
+          <SelectItem value="low" aria-label="Baixa">
+            Baixa
+          </SelectItem>
         </SelectContent>
       </Select>
 
@@ -99,6 +105,7 @@ export function EditForm({
         type="submit"
         disabled={!isFormValid}
         aria-disabled={!isFormValid}
+        aria-describedby="submit-button-hint"
       >
         Atualizar
       </button>

@@ -146,7 +146,7 @@ export function TaskProvider({ children }: { children: ReactNode }) {
       total: list.length,
       done: list.filter((task) => task.isDone).length,
     })
-  }, [loadStorage])
+  }, [loadStorage, tasks])
 
   useEffect(() => {
     let filtered = loadStorage('tasks')
