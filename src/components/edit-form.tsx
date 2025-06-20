@@ -51,7 +51,7 @@ export function EditForm({
 
   const isFormValid = useMemo(() => {
     if (task) {
-      return task.description.trim() && task.priority
+      return !!task.description.trim() && !!task.priority
     }
 
     return false
@@ -59,14 +59,14 @@ export function EditForm({
 
   if (!task) {
     return (
-      <div className="edit-form__load">
+      <div className="edit-form__load" role="status">
         <span>Carregando...</span>
       </div>
     )
   }
 
   return (
-    <form className="edit-form" onSubmit={handleUpdateTask}>
+    <form className="edit-form" onSubmit={handleUpdateTask} role="form">
       <input
         className="edit-form__input"
         type="text"
@@ -74,6 +74,7 @@ export function EditForm({
         placeholder="Adicione uma nova tarefa"
         value={task.description}
         onChange={(e) => handleOnValueChange('description', e.target.value)}
+        aria-label="Descrição da tarefa"
       />
 
       <Select
@@ -97,6 +98,7 @@ export function EditForm({
         className="edit-form__submit-button"
         type="submit"
         disabled={!isFormValid}
+        aria-disabled={!isFormValid}
       >
         Atualizar
       </button>
