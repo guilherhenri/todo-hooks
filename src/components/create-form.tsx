@@ -61,7 +61,7 @@ export function CreateForm() {
   }, [task])
 
   return (
-    <form className="create-form" onSubmit={handleCreateTask}>
+    <form className="create-form" onSubmit={handleCreateTask} role="form">
       <input
         className="create-form__input"
         type="text"
@@ -69,7 +69,12 @@ export function CreateForm() {
         placeholder="Adicione uma nova tarefa"
         value={task?.description}
         onChange={(e) => handleOnValueChange('description', e.target.value)}
+        aria-required="true"
+        aria-describedby="task-description-hint"
       />
+      <span id="task-description-hint" className="sr-only">
+        Digite a descrição da tarefa que deseja adicionar
+      </span>
 
       <Select
         name="priority"
@@ -78,7 +83,7 @@ export function CreateForm() {
           handleOnValueChange('priority', value as TaskForm['priority'])
         }
       >
-        <SelectTrigger>
+        <SelectTrigger aria-required="true">
           <SelectValue placeholder="Prioridade" />
         </SelectTrigger>
         <SelectContent>
@@ -92,10 +97,17 @@ export function CreateForm() {
         className="create-form__submit-button"
         type="submit"
         disabled={!isFormValid}
+        aria-label="Criar nova tarefa"
+        aria-describedby="submit-button-hint"
       >
         Criar
         <PlusCircleIcon size={20} />
       </button>
+      <span id="submit-button-hint" className="sr-only">
+        {!isFormValid
+          ? 'Preencha a descrição e selecione uma prioridade para criar a tarefa'
+          : 'Clique para criar a nova tarefa'}
+      </span>
     </form>
   )
 }
