@@ -34,7 +34,7 @@ const PRIORITY_ORDER: Record<TaskPriority, number> = {
   low: 3,
 } as const
 
-interface TaskContextType {
+export interface TaskContextType {
   tasks: Task[]
   filter: TaskFilter
   meta: Meta
