@@ -39,7 +39,7 @@ export function TaskCard({
   }
 
   return (
-    <div className="card">
+    <div className="card" role="listitem">
       <div className="card__done">
         <Checkbox
           variant="circle"
@@ -64,7 +64,10 @@ export function TaskCard({
       <div className="card__actions">
         <Dialog open={open} onOpenChange={setOpen}>
           <DialogTrigger asChild>
-            <button className="card__actions-button card__actions-edit">
+            <button
+              className="card__actions-button card__actions-edit"
+              aria-label="Editar tarefa"
+            >
               <PencilIcon size={18} />
             </button>
           </DialogTrigger>
@@ -80,6 +83,7 @@ export function TaskCard({
         <button
           className="card__actions-button card__actions-delete"
           onClick={() => deleteTask(id)}
+          aria-label="Apagar tarefa"
         >
           <TrashIcon size={18} />
         </button>

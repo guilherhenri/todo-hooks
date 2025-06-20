@@ -8,9 +8,9 @@ export function Header() {
   const { meta } = useTask()
 
   return (
-    <header className="header">
+    <header className="header" role="header">
       <div className="header__status">
-        <span className="header__created">
+        <span className="header__created" aria-label="Total de tarefas criadas">
           Tarefas Criadas{' '}
           <span className="header__status-tip">{meta.total}</span>
         </span>
