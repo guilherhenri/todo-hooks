@@ -16,6 +16,7 @@ export function Filters() {
           onCheckedChange={(checked) =>
             updateFilter('all', checked ? 'add' : 'remove')
           }
+          aria-label="todas"
         />
         <label className="filters__label">Todas</label>
       </div>
@@ -27,6 +28,7 @@ export function Filters() {
           onCheckedChange={(checked) =>
             updateFilter('high', checked ? 'add' : 'remove')
           }
+          aria-label="alta"
         />
         <label className="filters__label">Alta</label>
       </div>
@@ -38,6 +40,7 @@ export function Filters() {
           onCheckedChange={(checked) =>
             updateFilter('regular', checked ? 'add' : 'remove')
           }
+          aria-label="normal"
         />
         <label className="filters__label">Normal</label>
       </div>
@@ -49,6 +52,7 @@ export function Filters() {
           onCheckedChange={(checked) =>
             updateFilter('low', checked ? 'add' : 'remove')
           }
+          aria-label="baixa"
         />
         <label className="filters__label">Baixa</label>
       </div>
