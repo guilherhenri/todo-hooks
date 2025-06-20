@@ -1,4 +1,4 @@
-name: Run Unit Tests
+name: Run Unit & E2E Tests
 
 on:
   pull_request:
@@ -55,5 +55,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-          build: pnpm build
-          start: pnpm start
+          start: pnpm dev
+          wait-on: "http://localhost:5173"
+          wait-on-timeout: 120
+          browser: chrome
