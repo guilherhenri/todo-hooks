@@ -1,17 +1,23 @@
 import '@testing-library/jest-dom'
 
-jest.mock('@/contexts/task-context', () => {
-  const mockModule = jest.requireActual('@/tests/mocks/task-context')
+const testPath = expect.getState().testPath || ''
 
-  return mockModule
-})
+if (!testPath.includes('task-context.test.tsx')) {
+  jest.mock('@/contexts/task-context', () => {
+    const mockModule = jest.requireActual('@/tests/mocks/task-context')
 
-jest.mock('@/hooks/local-storage', () => ({
-  useLocalStorage: () => ({
-    syncStorage: jest.fn(),
-    loadStorage: jest.fn(() => []),
-  }),
-}))
+    return mockModule
+  })
+}
+
+if (!testPath.includes('local-storage.test.tsx')) {
+  jest.mock('@/hooks/local-storage', () => ({
+    useLocalStorage: () => ({
+      syncStorage: jest.fn(),
+      loadStorage: jest.fn(() => []),
+    }),
+  }))
+}
 
 jest.mock('uuid', () => ({
   v7: jest.fn(() => 'mocked-uuid-id'),
