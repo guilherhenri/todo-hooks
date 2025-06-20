@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import {
   createContext,
   type ReactNode,
@@ -19,7 +20,7 @@ export interface Task {
   isDone: boolean
 }
 
-type TaskForm = Omit<Task, 'id' | 'isDone'>
+export type TaskForm = Omit<Task, 'id' | 'isDone'>
 
 export type TaskFilter = Set<TaskPriority> | 'all'
 
@@ -44,13 +45,12 @@ export interface TaskContextType {
   deleteTask: (id: string) => void
   updateFilter: (
     value: 'all' | Task['priority'],
-    action: 'add' | 'remove',
+    action: 'add' | 'remove' | 'toggle',
   ) => void
 }
 
 const TaskContext = createContext({} as TaskContextType)
 
-// eslint-disable-next-line react-refresh/only-export-components
 export const useTask = () => {
   return useContext(TaskContext)
 }
@@ -116,7 +116,7 @@ export function TaskProvider({ children }: { children: ReactNode }) {
       }
 
       if (prevFilter === 'all') {
-        return action === 'add'
+        return action === 'add' || action === 'toggle'
           ? new Set([value])
           : new Set(TASK_PRIORITIES.filter((p) => p !== value))
       }
