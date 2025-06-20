@@ -65,7 +65,7 @@ export function CreateForm() {
       <input
         className="create-form__input"
         type="text"
-        name="title"
+        name="description"
         placeholder="Adicione uma nova tarefa"
         value={task?.description}
         onChange={(e) => handleOnValueChange('description', e.target.value)}
@@ -87,9 +87,15 @@ export function CreateForm() {
           <SelectValue placeholder="Prioridade" />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="high">Alta</SelectItem>
-          <SelectItem value="regular">Normal</SelectItem>
-          <SelectItem value="low">Baixa</SelectItem>
+          <SelectItem value="high" aria-label="Alta">
+            Alta
+          </SelectItem>
+          <SelectItem value="regular" aria-label="Normal">
+            Normal
+          </SelectItem>
+          <SelectItem value="low" aria-label="Baixa">
+            Baixa
+          </SelectItem>
         </SelectContent>
       </Select>
 
