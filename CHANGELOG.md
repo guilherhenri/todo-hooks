@@ -1,3 +1,21 @@
+# [1.3.0](https://github.com/guilherhenri/todo-hooks/compare/v1.2.0...v1.3.0) (2025-06-20)
+
+
+### Bug Fixes
+
+* **local-storage:** add error handling for invalid JSON parsing ([a762355](https://github.com/guilherhenri/todo-hooks/commit/a7623553f5b6c17783056bb588775bc597cc266e))
+
+
+### Features
+
+* **create-form:** enhance accessibility for task creation form ([ff823e1](https://github.com/guilherhenri/todo-hooks/commit/ff823e13742aff44f316200deac34a99b9004a57))
+* **edit-form:** enhance accessibility for task editing form ([c9de7fc](https://github.com/guilherhenri/todo-hooks/commit/c9de7fcdb79050d875473e0f2f9de4cc2a5265a2))
+* **filters:** enhance accessibility for Filters component ([4b808f5](https://github.com/guilherhenri/todo-hooks/commit/4b808f572823102dcf101c74bfa9f000b0a24b27))
+* **header:** enhance accessibility for task header ([94cb48c](https://github.com/guilherhenri/todo-hooks/commit/94cb48c644e1acae11f607761b8548a2f43236dc))
+* **list-tasks:** enhance accessibility for task list ([c24a7ed](https://github.com/guilherhenri/todo-hooks/commit/c24a7ed79bcf229eb4c2ebd6b02e130e4c45f5d1))
+* **task-card:** enhance accessibility and refine checkbox variant ([be52892](https://github.com/guilherhenri/todo-hooks/commit/be52892587806818c4f3a8449b4aaa1e0cf253ed))
+* **tests:** create TaskContext mock utilities ([b151050](https://github.com/guilherhenri/todo-hooks/commit/b151050e2b60ed688adbe3ca0d9857d70dd940dc))
+
 # [1.2.0](https://github.com/guilherhenri/todo-hooks/compare/v1.1.0...v1.2.0) (2025-06-19)
 
 
