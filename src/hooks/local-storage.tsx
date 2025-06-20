@@ -15,7 +15,11 @@ export const useLocalStorage = <T,>(): UseLocalStorageResponse<T> => {
   const loadStorage = useCallback((name: string): T => {
     const localData = localStorage.getItem(name)
 
-    return localData ? (JSON.parse(localData) as T) : ([] as T)
+    try {
+      return localData ? (JSON.parse(localData) as T) : ([] as T)
+    } catch {
+      return [] as T
+    }
   }, [])
 
   return { syncStorage, loadStorage }
