@@ -8,7 +8,7 @@
     "module": "ESNext",
     "esModuleInterop": true,
     "jsx": "react-jsx",
-    "types": ["@testing-library/jest-dom"],
+    "types": ["@testing-library/jest-dom", "cypress"],
     "paths": {
       "@/*": ["./src/*"]
     }
