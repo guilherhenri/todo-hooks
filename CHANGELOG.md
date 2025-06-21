@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/guilherhenri/todo-hooks/compare/v1.3.0...v1.4.0) (2025-06-21)
+
+
+### Features
+
+* **styles:** implement responsive mixins ([d104a6f](https://github.com/guilherhenri/todo-hooks/commit/d104a6fc8a785d93920af20bb7af5924e0155297))
+
 # [1.3.0](https://github.com/guilherhenri/todo-hooks/compare/v1.2.0...v1.3.0) (2025-06-20)
 
 
