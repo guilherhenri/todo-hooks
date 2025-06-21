@@ -1,3 +1,5 @@
+@use '../../abstracts/mixins' as *;
+
 .dialog {
   &__overlay {
     position: fixed;
@@ -27,6 +29,10 @@
     border-radius: var(--radius-lg);
     border: 1px solid var(--border);
     padding: 1.875rem;
+
+    @include respond-to('mobile') {
+      max-width: calc(100dvw - 3rem);
+    }
 
     &-close {
       background: transparent;

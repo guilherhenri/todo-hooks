@@ -1,14 +1,23 @@
+@use '../abstracts/mixins' as *;
+
 .content {
   display: flex;
   flex-direction: column;
 
   width: 100%;
   max-width: 46rem;
-  padding-top: 1.688rem;
+  padding: 1.688rem 0;
 
   margin: 0 auto;
 
   position: relative;
+
+  @include respond-to('mobile') {
+    padding: 1.5rem;
+    margin: 0;
+    max-width: 100%;
+    gap: 2rem;
+  }
 
   &__tasks {
     width: 100%;
@@ -18,6 +27,10 @@
     gap: 1.5rem;
 
     margin-top: 4rem;
+
+    @include respond-to('mobile') {
+      margin: 0;
+    }
   }
 }
 

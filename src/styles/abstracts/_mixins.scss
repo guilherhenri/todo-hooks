@@ -1,0 +1,29 @@
+$breakpoints: (
+  'mobile': 768px,
+  'tablet': 1024px,
+  'desktop': 1440px,
+);
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $value: map-get($breakpoints, $breakpoint);
+    
+    @if $breakpoint == 'mobile' {
+      @media (max-width: #{$value - 1px}) {
+        @content;
+      }
+    } @else if str-index($breakpoint, '-down') {
+      $clean-name: str-replace($breakpoint, '-down', '');
+      $value: map-get($breakpoints, $clean-name);
+      @media (max-width: #{$value - 1px}) {
+        @content;
+      }
+    } @else {
+      @media (min-width: #{$value}) {
+        @content;
+      }
+    }
+  } @else {
+    @warn "Breakpoint '#{$breakpoint}' não encontrado nos breakpoints disponíveis.";
+  }
+}

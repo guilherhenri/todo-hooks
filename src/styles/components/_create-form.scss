@@ -1,3 +1,5 @@
+@use '../abstracts/mixins' as *;
+
 .create-form {
   width: 100%;
   max-width: 46rem;
@@ -8,6 +10,19 @@
 
   position: absolute;
   top: -1.688rem;
+
+  @include respond-to('mobile') {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.625rem;
+
+    position: inherit;
+    top: 0;
+
+    button[role=combobox] {
+      width: 100%;
+    }
+  }
 
   &__input {
     width: 100%;
@@ -28,6 +43,8 @@
     }
   }
 
+  
+
   &__submit-button {
     display: flex;
     align-items: center;
@@ -44,6 +61,10 @@
 
     transition: background-color var(--transition-normal);
     cursor: pointer;
+
+    @include respond-to('mobile') {
+      margin-top: 0.5rem;
+    }
 
     svg {
       flex-shrink: 0;
